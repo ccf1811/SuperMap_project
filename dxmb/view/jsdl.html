@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>通用目标检测</title>
+		<link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="../layui/css/layui.css">
+		<link rel="stylesheet" href="../plugins/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../css/common.css">
+		<link rel="stylesheet" href="../css/header.css">
+		<link rel="stylesheet" href="../css/AI_index.css">
+		<link rel="stylesheet" href="../css/box-class.css">
+
+		<link rel="stylesheet" href="../css/cssFile.css">
+		<link rel="stylesheet" href="../css/index.css">
+
+		<script type="text/javascript" src="../layui/layui.all.js" charset="utf-8"></script>
+		<!-- <script src="./Plugin/layui/lay/modules/layer.js" charset="utf-8"></script> -->
+		<script src="../plugins/jquery-3.4.1/jquery-3.4.1.min.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
+		<style>
+			#layui-layer-shade1 {
+				z-index: 100;
+			}
+		</style>
+	</head>
+
+	<body class="layui-layout-body">
+		<div class="layui-body AI_body" style="padding: 0px;overflow:hide;left:0px;top: 0px;">
+			<div id="AIMbsb" class="layui-anim layui-anim-scale" data-anim="layui-anim-scale">
+				<div class="col-sm-6 input-group">
+					<input type="search" class="form-control" value="D:\Users\Administrator\Documents\HBuilderProjects\dxmb\upload">
+					<span class="input-group-addon" onclick="selectPicture()">浏览本地文件...</span>
+				</div>
+
+				<div class="row">
+					<div class="search-img col-sm-9 layui-anim layui-anim-upbit" data-anim="layui-anim-upbit">
+						<div class="picture-thumbnail" id="p1">
+							<img alt="" id="p2" class="media-object thumbnail" style="width:100%">
+						</div>
+					</div>
+					<div class="search-resouce col-sm-3 layui-anim layui-anim-fadein layui-anim-rotate">
+						<div class="AI-fxjg">
+							<div class="title-box">
+								<button id="setBtn">分析结果</button>
+							</div>
+							<div class="data-box">
+								<div class="settings-box">
+									<p>图像名称：<span id="name_a"></span></p>
+									<p>识别结果：<span id="lea_a"></span></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="layui-row" id="selectPicture" style="display:none; height: 100%;">
+				<div id="picture" class="layui-col-md12" style="height: 100%; overflow: auto;">
+					<div class="layui-col-md3" style="padding: 10px;" onclick="chekPic('1')">
+						<div style= "text-align: center; height: 200px;">
+							<img id="1" src="../img/dltq1-font.png" style="height: 100%; width: 100%">
+						</div>
+						<div style="text-align: center;">
+							<span></span>
+						</div>
+					</div>
+					<div class="layui-col-md3" style="padding: 10px;" onclick="chekPic('2');">
+						<div style= "text-align: center; height: 200px;">
+							<img src="../img/dltq-font.png" style="height: 100%; width: 100%">
+						</div>
+						<div style="text-align: center;">
+							<span></span>
+						</div>
+					</div>
+					<div class="layui-col-md3" style="padding: 10px;" onclick="chekPic('3');">
+						<div style= "text-align: center; height: 200px;">
+							<img id="3" src="../img/road1.jpg" style="height: 100%; width: 100%;">
+						</div>
+						<div style="text-align: center;">
+							<span></span>
+						</div>
+					</div>
+					<div class="layui-col-md3" style="padding: 10px;" onclick="chekPic('4');">
+						<div style= "text-align: center; height: 200px;">
+							<img id="4" src="../img/road3.jpg" style="height: 100%; width: 100%;">
+						</div>
+						<div style="text-align: center;">
+							<span></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			
+			$(function() {
+				$("#AIZnwd").hide();
+				$("#AIMbsb").show();
+			})
+			
+			function selectPicture() {
+				$(".search-img").css("display","none");
+				$(".search-resouce").css("display","none");
+				layer.open({
+					type: 1,
+					shade: false,
+					title: '目标检测',
+					area: ['1000px', '700px'],
+					content: $('#selectPicture'),
+					cancel: function(index, layero){ 
+					  $("#selectPicture").css("display","none");
+					}    
+				});
+			}
+			
+			function chekPic(obj) {
+				layer.closeAll();
+				$("#selectPicture").css("display", "none");
+				$("#p1 img").attr("src", event.target.src);
+				$(".search-img").show();
+				switch (obj) {
+					case '1':
+						setTimeout(function(){
+							$(".search-img img").attr("src","../img/dltq1-back.png");
+							$("#name_a").text("空军基地");
+							$("#lea_a").html("公路(60%)<br> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;机场(20%)");
+							$(".search-resouce").show();
+						},2500);
+						break;
+					case '2':
+						setTimeout(function(){
+							$(".search-img img").attr("src","../img/dltq-back.png");
+							$("#name_a").text("陆军基地");
+							$("#lea_a").html("兵营(90%)<br> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;线路(40%)");
+							$(".search-resouce").show();
+						},2500);
+						break;
+					case '3':
+						setTimeout(function(){
+							$(".search-img img").attr("src","../img/road2.jpg");
+							$("#name_a").text("某基地区域路线");
+							$("#lea_a").html("道路(80%) &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;停车场(40%)");
+							$(".search-resouce").show();
+						},2500);
+						break;
+					case '4':
+						setTimeout(function(){
+						    $(".search-img img").attr("src","../img/road4.jpg");
+							$("#name_a").text("美军横须贺基地");
+							$("#lea_a").html("公路(90%)");
+							$(".search-resouce").show();
+						},2500);
+						break;
+					default:
+						break;
+				}
+			}
+		</script>
+	</body>
+
+</html>

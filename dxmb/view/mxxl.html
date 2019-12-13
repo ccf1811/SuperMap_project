@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>模型训练</title>
+		<!-- 引入Jquery kemeiduo 2019/10/31-->
+		<script src="../plugins/jquery-3.4.1/jquery-3.4.1.min.js" type="text/javascript"></script>
+		<!-- 引入layUI kemeiduo 2019/10/31-->
+		<link rel="stylesheet" href="../layui/css/layui.css" media="all">
+		<link rel="stylesheet" href="../plugins/zTree-zTree_v3-2ffc0fa/css/zTreeStyle/zTreeStyle.css" />
+		<script type="text/javascript" src="../plugins/zTree-zTree_v3-2ffc0fa/js/jquery.ztree.all-3.5.min.js"></script>
+		<script src="../layui/layui.js" type="text/javascript"></script>
+		<!-- 引入公共类 common.js -->
+		<script src="../common/common.js" type="text/javascript"></script>
+		<style>
+			.layui-body {
+				position: absolute;
+				left: 20%;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				z-index: 998;
+				width: auto;
+				overflow-y: auto;
+				box-sizing: border-box;
+			}
+			
+			.layui-layout-admin .layui-side {
+				top: 0px;
+				width: 20%;
+				overflow-x: hidden;
+			}
+
+
+			.layui-layout-admin .layui-body {
+				position: fixed;
+				top: 0px;
+				bottom: 44px;
+			}
+
+			.layui-side-scroll {
+				width: 100%;
+			}
+
+			.picture {
+				height: 150px;
+				padding: 0 15px;
+				margin-bottom: 20px;
+			}
+
+			.button-area {
+				height: 20px;
+				margin-left: 5px;
+			}
+
+			.button-area input {
+				width: 100%;
+			}
+
+			.header {
+				height: 30px;
+				padding: 15px;
+			}
+			.check-area {
+				height: 30px;
+			}
+			.check-area input {
+				height: 20px;
+				margin-top: 5px;
+			}
+			
+			.train_div{
+				padding: 10px;
+				
+			}
+			.train_picture{
+			}
+		</style>
+	</head>
+	<body class="layui-layout-body mxxl_body">
+		<div class="layui-layout layui-layout-admin">
+			<!-- 左侧属性结构  开始 -->
+			<div class="layui-side layui-bg-gray  ">
+				<div class="layui-side-scroll">
+
+					<div class="layui-tab" style="margin-top: 10px; height: 94%; overflow: auto;">
+						<div class="layui-tab-content" style="padding: 0;">
+							<div class="layui-tab-item layui-show show">
+								<div>
+									<ul id="treeDemo" class="ztree"></ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 左侧导航区域  结束 -->
+
+			<div class="layui-body" style="background-color: #eeeeee;border-left: 1px solid #c2c2c2;">
+				<!-- 内容主体区域 -->
+				<div>
+					<div class="layui-row train_div" style="height: 100%;">
+
+						<div class="layui-row">
+							<div class="layui-col-md6 empty-area">
+								<button type="button" onclick="startTrain()" class="layui-btn layui-btn-primary" style="margin-bottom: 5px ;"><span>开始训练</span></button>
+								<span class="layui-bg-gray ">选中你要需要的元素进行训练</span>
+							</div>
+							<div class="layui-col-md6 empty-area">
+								<button type="button" onclick="overTrain()" class="layui-btn layui-btn-primary" style="margin-bottom: 5px ;"><span>结束训练</span></button>
+							</div>
+						</div>
+						<div class="layui-row" id="module-show" style="height: 50%"></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 训练结束弹出层 -->
+			<div id="traincg" lay-filter="test1" style="display:none">
+				<br />
+				<h2>&nbsp;&nbsp;请前往目标识别模块</h2>
+				<h2>&nbsp;&nbsp;查看训练成果</h2>
+			</div>
+
+		</div>
+		<script src="../pageCtrl/mxxl.js" type="text/javascript"></script>
+	</body>
+</html>

@@ -1,0 +1,243 @@
+.AI_body{
+    background-image: url("../img/AI-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* 目标识别 开始 */
+#AIMbsb,
+.search-img,
+.search-resouce {
+    display:none;
+}
+.search-resouce{
+    margin-left: -90px;
+}
+#AIMbsb > .input-group{
+    margin: 15px auto;
+}
+#AIMbsb .input-group-addon {
+    background-color: #0E94EA;
+    border-color: #0E94EA;
+    color: azure;
+    cursor: pointer;
+}
+#AIMbsb .picture-thumbnail{
+    margin: 20px auto;
+    width: 55%;
+    position: relative;
+}
+#AIMbsb .picture-thumbnail:after{
+    content: "";
+    width: 100%;
+    /* height: 30px; */
+    display: block;
+    position: absolute;
+    background:  -webkit-linear-gradient(0deg,  rgba(14, 148, 234, 0.42), transparent);
+    background:  -moz-linear-gradient(0deg,  rgba(14, 148, 234, 0.42), transparent);
+    background:  -o-linear-gradient(0deg,  rgba(14, 148, 234, 0.42), transparent);
+    background:  linear-gradient(0deg,  rgba(14, 148, 234, 0.42), transparent);
+    animation: line-done 2s ease-in-out;
+}
+@keyframes line-done {
+    from { top: 0;height: 30px}
+    to{ top: 100%;height: 2px}
+}
+.AI-fxjg{
+    margin: 50px 100px 50px 0;
+    position: relative;
+}
+.AI-fxjg>.title-box {
+    width: 100%;
+    height: 40px;
+    background: url(../images/box_title.png) top left no-repeat;
+    background-size: 100% 100%;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    position: relative;
+}
+.title-box>button {
+    font-size: 16px;
+    border: none;
+    background: transparent;
+    color: #cdddf7;
+    height: 40px;
+    position: absolute;
+    right: 60px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    cursor: pointer;
+}
+.data-box {
+    /* width: 100%; */
+    position: absolute;
+    margin: auto;
+    top: 50px;
+    /* bottom: 0; */
+    left: 0;
+    right: 0;
+}
+
+.data-box>.settings-box{
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 664px;
+    /* position: absolute; */
+    margin: auto;
+    /* top: 0; */
+    /* left: 0; */
+    /* right: 0; */
+    /* bottom: 0; */
+    background-color: rgba(14, 148, 234, 0.2);
+    border: 1px solid #0E94EA;
+    color: white;
+    font-size: 0.18rem;
+    overflow: hidden;
+    padding-top: 30px;
+}
+.settings-box>p {
+    color: #cdddf7;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+}
+.settings-box>p>span{
+    font-size: 20px;
+}
+
+/* 目标识别 结束 */
+
+
+
+/* 智能问答 开始 */
+#AIZnwd .panel{
+    background-color: transparent;
+}
+#AIZnwd .panel-body{
+    padding: 50px 100px;
+}
+#AIZnwd .panel-body .conversation-text p{
+    font-size: 20px;
+}
+#AIZnwd .panel-body .conversation-text p a{
+    font-size: 20px;
+    color: #0E94EA;
+    text-decoration: none;
+}
+#AIZnwd .widget-conversation-list li {
+    margin-bottom: 24px;
+}
+#AIZnwd .widget-conversation-list .chat-avatar {
+    width: 80px;
+    border-radius: 20%;
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+    float: left;
+}
+#AIZnwd .widget-conversation-list .odd .chat-avatar {
+    float: right !important;
+}
+#AIZnwd .widget-conversation-list .conversation-text {
+    display: inline-block;
+    font-size: 12px;
+    float: left;
+    margin-left: 12px;
+    width: 70%;
+}
+#AIZnwd .widget-conversation-list .odd .conversation-text {
+    width: 70% !important;
+    margin-right: 12px;
+    text-align: right;
+    float: right !important;
+}
+#AIZnwd .widget-conversation-list .ctext-wrap {
+    padding: 10px;
+    background: #d5f2ef;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 6px;
+    position: relative;
+    display: inline-block;
+}
+#AIZnwd .widget-conversation-list .odd .ctext-wrap {
+    background: #eeeef2 !important;
+}
+
+#AIZnwd .widget-conversation-list .ctext-wrap:after {
+    right: 100%;
+    top: 20%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(213,242,239,0);
+    border-right-color: #d5f2ef;
+    border-width: 5px;
+    margin-top: -5px;
+}
+#AIZnwd .widget-conversation-list .odd .ctext-wrap:after {
+    left: 100% !important;
+    top: 20% !important;
+    border-color: rgba(238,238,242,0)!important;
+    border-left-color: #eeeef2!important;
+}
+#AIZnwd .widget-conversation-list .img-resource{
+    width: 430px;
+}
+/* 语音识别 */
+#AIZnwd .speeth-box{
+    height: 50px;
+    overflow: hidden;
+    position: fixed;
+    bottom: 20px;
+    left: 45%;
+}
+#AIZnwd .speeth-content{
+    width: 140px;
+    margin: 0 auto;
+}
+#AIZnwd .speeth-content>img{
+    width: 200px;
+    /* position: absolute; */
+    padding: -10px;
+    margin-top: -48px;
+    margin-left: -30px;
+}
+#AIZnwd .text-content{
+    display:none;
+}
+/* 智能问答 结束 */
+
+
+
+@keyframes typing {
+    from { width: 0}
+}
+@keyframes blink-caret {
+    50% { border-color: transparent; }
+}
+ 
+.simulation_text1,
+.simulation_text2 {
+    font: 200% monospace;
+    border-right: .08em solid;
+    width: 24ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(12, end),
+               blink-caret .3s step-end infinite alternate; 
+}
+.simulation_text2{
+    width: 54ch;
+    animation: typing 5s steps(29, end),
+               blink-caret .5s step-end infinite alternate; 
+}

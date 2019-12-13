@@ -1,0 +1,19 @@
+*{padding:0px;margin:0px;font-family:"微软雅黑";font-size:12px; font-style:normal}
+dd,dl,dt,em,i,p,textarea,a,div{padding:0px;margin:0px;}
+a{text-decoration:none;color: rgb(255, 255, 255);}
+img{border:0px;}
+ul,li{padding:0px;margin:0px;list-style:none;}
+.fl{ float:left}
+.fr{ float:right}
+body{margin:0px; padding:0px;}
+.clearfix:after,.clearfix:before{content:"";display:table}
+.clearfix:after{clear:both;overflow:hidden}
+
+
+/*四个角*/
+.topL{width:20px;height:20px;border-top-width:2px;border-top-color:#26c6f0;border-top-style:solid;border-left-width:2px;border-left-color:#26c6f0;border-left-style:solid;position:absolute;top:0px;left:0px}
+.topR{width:20px;height:20px;border-top-width:2px;border-top-color:#26c6f0;border-top-style:solid;border-right-width:2px;border-right-color:#26c6f0;border-right-style:solid;position:absolute;top:0px;right:0px}
+.bottomL{width:20px;height:20px;border-bottom-width:2px;border-bottom-color:#26c6f0;border-bottom-style:solid;border-left-width:2px;border-left-color:#26c6f0;border-left-style:solid;position:absolute;bottom:0px;left:0px}
+.bottomR{width:20px;height:20px;border-bottom-width:2px;border-bottom-color:#26c6f0;border-bottom-style:solid;border-right-width:2px;border-right-color:#26c6f0;border-right-style:solid;position:absolute;bottom:0px;right:0px}
+h1,h2,h3,h4,h5,h6{margin-top: 10px;}
+
